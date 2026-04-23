@@ -597,16 +597,18 @@ def draw_combo_chart_global(df, title, ylabel, output_file, legend_prefix=""):
             continue
 
         delta = abs(y1 - y2)
-        sep = max(MIN_GAP, delta * 0.35)
+        sep = max(MIN_GAP, delta * 0.25)
 
         bar_h = bar_vals[int(x_val)]
         extra_bar_gap = ymax * 0.02 if bar_h > y1 * 0.9 else 0
+        y_label1 = max(y1 - sep - extra_bar_gap, ymax * 0.06)
+        y_label2 = min(y2 + sep, ymax * 0.965)
 
         # LINE1 – Mục tiêu hoàn thành
         if y1 > 0:
             ax.text(
                 x_val,
-                y1 - sep - extra_bar_gap,
+                y_label1,
                 int(y1),
                 ha="center",
                 va="top",
@@ -619,12 +621,11 @@ def draw_combo_chart_global(df, title, ylabel, output_file, legend_prefix=""):
         if y2 > 0:
             ax.text(
                 x_val,
-                y2 + sep,
+                y_label2,
                 int(y2),
                 ha="center",
-                va="bottom",
+                va=("bottom" if y_label2 < ymax * 0.96 else "top"),
                 fontsize=8,
-                fontweight="normal",
                 color="red",
                 bbox=TEXT_BOX
             )
