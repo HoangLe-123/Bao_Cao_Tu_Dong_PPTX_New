@@ -131,33 +131,34 @@ def save_figure(fig, output_file):
         pad_inches=0.04
     )
     plt.close(fig)
-# ========== TUNABLES Chính ==========
-# EXCEL_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Hằng ngày_data_view.xlsx")
-# EXCEL_SHEET = "Hằng ngày"
-# EXCEL_YEAR_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Tính sản xuất năm 2026.xlsx")
-# EXCEL_YEAR_SHEET = "NĂM 2026"
-# EXCEL_THUCTICH_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\ThucTich_Data.xlsx")
-# EXCEL_THUCTICH_SHEET = "Sheet1"
-# EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\CONG VIEC CHUNG 2026\★2026年度年次目標設定\5.COSTDOWN 2026\5.MỤC TIÊU 2026\COSTDOWN 2026\Costdown nội tác 2026.xlsx")
-# EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
-# EXCEL_TIMER_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\DulieutudongTimer_view.xlsx")
-# EXCEL_TIMER_SHEET = "Tong_Hop"
-# PPT_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Bao_Cao_Hang_Ngay.pptx")
-# ROW_DATE = "Ngày làm việc"
 
-# ========== TUNABLES Test ==========
-EXCEL_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Hằng ngày_data.xlsx")
+#========== Chính ==========
+EXCEL_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Hằng ngày_data_view.xlsx")
 EXCEL_SHEET = "Hằng ngày"
-EXCEL_YEAR_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Tính sản xuất năm 2026.xlsx")
+EXCEL_YEAR_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Tính sản xuất năm 2026.xlsx")
 EXCEL_YEAR_SHEET = "NĂM 2026"
-EXCEL_THUCTICH_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\ThucTich_Data.xlsx")
+EXCEL_THUCTICH_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\ThucTich_Data.xlsx")
 EXCEL_THUCTICH_SHEET = "Sheet1"
-EXCEL_COSTDOWN_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Costdown nội tác 2026.xlsx")
+EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\CONG VIEC CHUNG 2026\★2026年度年次目標設定\5.COSTDOWN 2026\5.MỤC TIÊU 2026\COSTDOWN 2026\Costdown nội tác 2026.xlsx")
 EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
-EXCEL_TIMER_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\DulieutudongTimer_view.xlsx")
+EXCEL_TIMER_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\DulieutudongTimer_view.xlsx")
 EXCEL_TIMER_SHEET = "Tong_Hop"
-PPT_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Bao_Cao_Hang_Ngay.pptx")
+PPT_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Bao_Cao_Hang_Ngay.pptx")
 ROW_DATE = "Ngày làm việc"
+
+# ========== Test ==========
+# EXCEL_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Hằng ngày_data.xlsx")
+# EXCEL_SHEET = "Hằng ngày"
+# EXCEL_YEAR_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Tính sản xuất năm 2026.xlsx")
+# EXCEL_YEAR_SHEET = "NĂM 2026"
+# EXCEL_THUCTICH_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\ThucTich_Data.xlsx")
+# EXCEL_THUCTICH_SHEET = "Sheet1"
+# EXCEL_COSTDOWN_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Costdown nội tác 2026.xlsx")
+# EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
+# EXCEL_TIMER_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\DulieutudongTimer.xlsx")
+# EXCEL_TIMER_SHEET = "Tong_Hop"
+# PPT_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Bao_Cao_Hang_Ngay.pptx")
+# ROW_DATE = "Ngày làm việc"
 
 
 LOCAL_OUT_DIR = Path(tempfile.gettempdir()) / "BaoCaoHangNgay"
@@ -197,7 +198,7 @@ GLOBAL_CONFIG = [
             "mt": "MỤC TIÊU SỐ BẢN VẼ HOÀN THÀNH TRONG NGÀY",
             "lk": "MỤC TIÊU LŨY KẾ BẢN VẼ HT TRONG NGÀY ( CÒN LẠI)",
         },
-        "title": "TỔNG BẢN VẼ HOÀN THÀNH TRONG THÁNG ",
+        "title": "TỔNG BẢN VẼ HOÀN THÀNH TRONG NGÀY",
         "ppt_shape": "tong_ban_ve_shape"
     },
     
@@ -209,7 +210,7 @@ GLOBAL_CONFIG = [
             "mt": "MỤC TIÊU SỐ PCS HOÀN THÀNH TRONG NGÀY",
             "lk": "MỤC TIÊU LŨY KẾ SỐ PCS HT TRONG NGÀY ( CÒN LẠI)",
         },
-        "title": "TỔNG SỐ PCS HOÀN THÀNH TRONG THÁNG",
+        "title": "TỔNG SỐ PCS HOÀN THÀNH TRONG NGÀY",
         "ppt_shape": "tong_so_pcs_shape"
     }
 
@@ -479,6 +480,29 @@ def draw_combo_chart_global(df, title, ylabel, output_file, legend_prefix=""):
     def L(text):
         return f"{legend_prefix} - {text}" if legend_prefix else text
 
+
+    # ======================
+    # TÍNH KPI TỔNG
+    # ======================
+    total_tt = df["BAR"].sum()
+    total_mt = df["LINE1"].sum()
+    percent = (total_tt / total_mt * 100) if total_mt > 0 else 0
+
+    # kpi_text = (
+    #     f"{legend_prefix}: "
+    #     f"{int(total_tt):,}/{int(total_mt):,} "
+    #     f"({percent:.1f}%)"
+    # )
+
+    # # đổi màu KPI theo % đạt
+    # if percent >= 80:
+    #     kpi_color = "#2e7d32"   # xanh
+    # elif percent >= 60:
+    #     kpi_color = "#f9a825"   # vàng
+    # else:
+    #     kpi_color = "#c62828"   # đỏ
+
+ 
     # ======================
     # FIGURE & AXIS
     # ======================
@@ -648,6 +672,56 @@ def draw_combo_chart_global(df, title, ylabel, output_file, legend_prefix=""):
         # fontweight=CHART_THEME["title"]["fontweight"],
         y=CHART_THEME["title"]["y"]   # ✅ đã nâng cao
     )
+    
+    
+    y_kpi = 0.94
+
+    # # Nhãn
+    # fig.text(
+    #     0.70, y_kpi,
+    #     f"{legend_prefix} |",
+    #     ha="right",
+    #     va="center",
+    #     fontsize=12,
+    #     fontweight="bold",
+    #     color="#0c2d57"
+    # )
+
+    # Thực tích – xanh đậm
+    fig.text(
+        0.712, y_kpi,
+        f"T/tích: {int(total_tt):,}",
+        ha="left",
+        va="center",
+        fontsize=12,
+        fontweight="bold",
+        color="#1f77b4"
+    )
+
+    # Mục tiêu – đỏ
+    fig.text(
+        0.798, y_kpi,
+        f"M/tiêu: {int(total_mt):,}",
+        ha="left",
+        va="center",
+        fontsize=12,
+        fontweight="bold",
+        color="#c62828"
+    )
+
+    # % hoàn thành – trung tính
+    fig.text(
+        0.985, y_kpi,
+        f"H/thành: {percent:.1f}%",
+        ha="right",
+        va="center",
+        fontsize=12,
+        fontweight="bold",
+        color="#444444"
+    )
+
+
+
 
     # ======================
     # LAYOUT & SAVE
@@ -1985,7 +2059,8 @@ def replace_table_by_anchor_centered(
             data_rows = len(df)
 
             table_shape = slide.shapes.add_table(
-                data_rows + 2,   # title + header + data
+                # data_rows + 2,   # title + header + data
+                data_rows + 1,   # header + data
                 cols,
                 left, top, width, height
             )
@@ -1999,28 +2074,28 @@ def replace_table_by_anchor_centered(
             # ==================================================
             # TITLE
             # ==================================================
-            title_cell = table.cell(0, 0)
-            title_cell.merge(table.cell(0, cols - 1))
-            title_cell.text = (
-                f"Bản vẽ Hoàn thành, Trễ hẹn và Phụ tải Công đoạn – {report_date}"
-            )
-            title_cell.fill.solid()
-            title_cell.fill.fore_color.rgb = RGBColor(21, 96, 130)
+            # title_cell = table.cell(0, 0)
+            # title_cell.merge(table.cell(0, cols - 1))
+            # title_cell.text = (
+            #     f"Bản vẽ Hoàn thành, Trễ hẹn và Phụ tải Công đoạn – {report_date}"
+            # )
+            # title_cell.fill.solid()
+            # title_cell.fill.fore_color.rgb = RGBColor(21, 96, 130)
 
-            for p in title_cell.text_frame.paragraphs:
-                p.alignment = PP_ALIGN.CENTER
-                p.font.size = Pt(16)
-                p.font.bold = True
-                p.font.color.rgb = RGBColor(255, 255, 255)
+            # for p in title_cell.text_frame.paragraphs:
+            #     p.alignment = PP_ALIGN.CENTER
+            #     p.font.size = Pt(16)
+            #     p.font.bold = True
+            #     p.font.color.rgb = RGBColor(255, 255, 255)
 
             # ==================================================
             # HEADER
             # ==================================================
             for c, col_name in enumerate(df.columns):
-                cell = table.cell(1, c)
+                cell = table.cell(0, c)
                 cell.text = col_name
                 cell.fill.solid()
-                cell.fill.fore_color.rgb = RGBColor(248, 203, 173)
+                cell.fill.fore_color.rgb = RGBColor(21, 96, 130)
 
                 for p in cell.text_frame.paragraphs:
                     p.alignment = PP_ALIGN.CENTER
@@ -2039,7 +2114,7 @@ def replace_table_by_anchor_centered(
                     else:
                         txt = str(val)
 
-                    cell = table.cell(r + 2, c)
+                    cell = table.cell(r + 1, c)
                     cell.text = txt
                     cell.vertical_anchor = MSO_VERTICAL_ANCHOR.MIDDLE
 
@@ -2322,7 +2397,7 @@ def main():
     # =================================================
     # ✅ LẤY SLIDE GLOBAL
     slide_idx = PPT_ANCHORS["global"]["slide"]
-    title_text = "MỤC TIÊU – THỰC TÍCH SẢN LƯỢNG TOÀN BỘ CÔNG ĐOẠN"
+    title_text = "MỤC TIÊU – THỰC TÍCH BẢN VẼ & SỐ PCS HOÀN THÀNH THEO NGÀY"
     update_title_in_ppt(prs, slide_idx, title_text, title_shape_name="title_global",font_name="Calibri",font_size_pt=20,bold=True,color_rgb=(0, 0, 128))   # xanh đậm
     for cfg in GLOBAL_CONFIG:
         try:
@@ -2446,12 +2521,17 @@ def main():
     df_file3 = load_file3_G1_L16()
 
     # ✅ TIÊU ĐỀ TABLE (NẰM TRÊN)
+    report_date = (datetime.now() - timedelta(days=1)).strftime("%d/%m/%Y")
+
     update_table_title_by_anchor(
         prs,
         slide_index=2,
         anchor_name="title_file3_table",
-        title_text="PHỤ TẢI CÔNG ĐOẠN – THỰC TÍCH GIA CÔNG",
-        font_size_pt=20
+        title_text=f"BẢN VẼ HOÀN THÀNH, TRỄ HẸN VÀ PHỤ TẢI CÔNG ĐOẠN – {report_date}",
+        font_name="Calibri",
+        font_size_pt=20,
+        bold=True,
+        color_rgb=(0, 0, 139)   # xanh đậm
     )
 
 
