@@ -131,21 +131,34 @@ def save_figure(fig, output_file):
         pad_inches=0.04
     )
     plt.close(fig)
-# ========== TUNABLES ==========
-EXCEL_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Hằng ngày_data_view.xlsx")
+# ========== TUNABLES Chính ==========
+# EXCEL_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Hằng ngày_data_view.xlsx")
+# EXCEL_SHEET = "Hằng ngày"
+# EXCEL_YEAR_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Tính sản xuất năm 2026.xlsx")
+# EXCEL_YEAR_SHEET = "NĂM 2026"
+# EXCEL_THUCTICH_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\ThucTich_Data.xlsx")
+# EXCEL_THUCTICH_SHEET = "Sheet1"
+# EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\CONG VIEC CHUNG 2026\★2026年度年次目標設定\5.COSTDOWN 2026\5.MỤC TIÊU 2026\COSTDOWN 2026\Costdown nội tác 2026.xlsx")
+# EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
+# EXCEL_TIMER_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\DulieutudongTimer_view.xlsx")
+# EXCEL_TIMER_SHEET = "Tong_Hop"
+# PPT_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Bao_Cao_Hang_Ngay.pptx")
+# ROW_DATE = "Ngày làm việc"
+
+# ========== TUNABLES Test ==========
+EXCEL_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Hằng ngày_data.xlsx")
 EXCEL_SHEET = "Hằng ngày"
-EXCEL_YEAR_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Tính sản xuất năm 2026.xlsx")
+EXCEL_YEAR_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Tính sản xuất năm 2026.xlsx")
 EXCEL_YEAR_SHEET = "NĂM 2026"
-EXCEL_THUCTICH_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\ThucTich_Data.xlsx")
+EXCEL_THUCTICH_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\ThucTich_Data.xlsx")
 EXCEL_THUCTICH_SHEET = "Sheet1"
-EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\CONG VIEC CHUNG 2026\★2026年度年次目標設定\5.COSTDOWN 2026\5.MỤC TIÊU 2026\COSTDOWN 2026\Costdown nội tác 2026.xlsx")
+EXCEL_COSTDOWN_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Costdown nội tác 2026.xlsx")
 EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
-EXCEL_TIMER_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\DulieutudongTimer_view.xlsx")
+EXCEL_TIMER_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\DulieutudongTimer_view.xlsx")
 EXCEL_TIMER_SHEET = "Tong_Hop"
-PPT_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Bao_Cao_Hang_Ngay.pptx")
+PPT_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Bao_Cao_Hang_Ngay.pptx")
 ROW_DATE = "Ngày làm việc"
-# OUT_DIR = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\charts")
-# OUT_DIR.mkdir(parents=True, exist_ok=True)
+
 
 LOCAL_OUT_DIR = Path(tempfile.gettempdir()) / "BaoCaoHangNgay"
 LOCAL_OUT_DIR.mkdir(parents=True, exist_ok=True)
