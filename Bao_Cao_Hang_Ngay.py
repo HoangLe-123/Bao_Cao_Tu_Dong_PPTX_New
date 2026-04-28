@@ -24,6 +24,8 @@ from datetime import datetime, timedelta
 import tempfile
 import shutil
 import os
+import stat
+import subprocess
 import time
 
 def copy_to_server_safe(src: Path, dst_dir: Path, retry=3):
@@ -147,15 +149,15 @@ PPT_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Bá
 ROW_DATE = "Ngày làm việc"
 
 # ========== Test ==========
-# EXCEL_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Hằng ngày_data.xlsx")
+# EXCEL_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Hằng ngày_data.xlsx")
 # EXCEL_SHEET = "Hằng ngày"
-# EXCEL_YEAR_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Tính sản xuất năm 2026.xlsx")
+# EXCEL_YEAR_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Tính sản xuất năm 2026.xlsx")
 # EXCEL_YEAR_SHEET = "NĂM 2026"
-# EXCEL_THUCTICH_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\ThucTich_Data.xlsx")
+# EXCEL_THUCTICH_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\ThucTich_Data.xlsx")
 # EXCEL_THUCTICH_SHEET = "Sheet1"
-# EXCEL_COSTDOWN_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Costdown nội tác 2026.xlsx")
+# EXCEL_COSTDOWN_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Costdown nội tác 2026.xlsx")
 # EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
-# EXCEL_TIMER_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\DulieutudongTimer.xlsx")
+# EXCEL_TIMER_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\DulieutudongTimer.xlsx")
 # EXCEL_TIMER_SHEET = "Tong_Hop"
 # PPT_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Bao_Cao_Hang_Ngay.pptx")
 # ROW_DATE = "Ngày làm việc"
@@ -567,15 +569,21 @@ def draw_combo_chart_global(df, title, ylabel, output_file, legend_prefix=""):
         label=f"Mục tiêu {legend_prefix} còn lại" if legend_prefix else "Mục tiêu còn lại"
     )
     # ======================
-    # NÂNG TRẦN TRỤC Y (HEADROOM)
+    # NÂNG TRẦN TRỤC Y (HEADROOM) – SAFE
     # ======================
-    y_max_data = max(
-        df["BAR"].max(),
-        df["LINE1"].max(),
-        df["LINE2"].max()
-    )
+    series = pd.concat([
+        df["BAR"],
+        df["LINE1"],
+        df["LINE2"]
+    ], axis=0)
 
-    ax.set_ylim(0, y_max_data * 1.18)   # ✅ 15–20% là đẹp cho chart này
+    series = series.replace([np.inf, -np.inf], np.nan)
+    y_max_data = series.dropna().max()
+
+    if pd.isna(y_max_data) or y_max_data <= 0:
+        y_max_data = 1   # ✅ fallback an toàn
+
+    ax.set_ylim(0, y_max_data * 1.18)
 
     # ======================
     # DATA LABEL – TINH CHỈNH CAO CẤP (RIÊNG CHART NÀY)
@@ -810,7 +818,17 @@ def draw_combo_chart_block_excel_style(df_daily, df_month, title, ylabel, output
                         color=CHART_THEME["line"]["target_month"]
                     )
 
-        left_max = max(df_month[["Ca1", "Ca2", "Mục tiêu"]].max().max(), 1)
+        vals = pd.concat([
+            df_month["Ca1"],
+            df_month["Ca2"],
+            df_month["Mục tiêu"]
+        ], axis=0).replace([np.inf, -np.inf], np.nan)
+
+        left_max = vals.dropna().max()
+
+        if pd.isna(left_max) or left_max <= 0:
+            left_max = 1
+
         ax_left.set_ylim(0, left_max * LEFT_Y_MULT)
 
     # ======================
@@ -937,9 +955,19 @@ def draw_combo_chart_block_excel_style(df_daily, df_month, title, ylabel, output
                 linewidth=1.4
             )
 
-        right_max = max(
-            df_daily[["Ca1", "Ca2", "Mục tiêu", "Lũy kế Ca1", "Lũy kế Ca2"]].max().max(), 1
-        )
+        vals = pd.concat([
+            df_daily["Ca1"],
+            df_daily["Ca2"],
+            df_daily["Mục tiêu"],
+            df_daily["Lũy kế Ca1"],
+            df_daily["Lũy kế Ca2"]
+        ], axis=0).replace([np.inf, -np.inf], np.nan)
+
+        right_max = vals.dropna().max()
+
+        if pd.isna(right_max) or right_max <= 0:
+            right_max = 1
+
         ax_right.set_ylim(0, right_max * RIGHT_Y_MULT)
 
     # ======================
@@ -1784,10 +1812,12 @@ def draw_year_bv_pcs_combo_chart(df, title, output_file,show_title=True):
     ax2.yaxis.set_label_coords(1.03, 1.025)
 
     # SCALE Y – RẤT QUAN TRỌNG CHO CÂN MẮT
-    y_max_bv = max(df["MT BV"].max(), df["TT BV"].max())
-    ax.set_ylim(0, y_max_bv * 1.1)   # ✅ KHÔNG QUÁ CAO
+    y_bv = pd.concat([df["MT BV"], df["TT BV"]]).dropna()
+    y_max_bv = y_bv.max() if not y_bv.empty else 1
+    ax.set_ylim(0, y_max_bv * 1.1)
 
-    y_max_pcs = max(df["MT PCS"].max(), df["TT PCS"].max())
+    y_pcs = pd.concat([df["MT PCS"], df["TT PCS"]]).dropna()
+    y_max_pcs = y_pcs.max() if not y_pcs.empty else 1
     ax2.set_ylim(0, y_max_pcs * 1.15)
 
     # ======================
@@ -2572,9 +2602,36 @@ def main():
     )
 
     process_timer_block_charts(prs)
-    prs.save(PPT_FILE)
 
+    # ==============================
+    # SAVE PPT – SAFE MODE
+    # ==============================
+    file_view = PPT_FILE.parent / f"{PPT_FILE.stem}_view.pptx"
+    file_final = PPT_FILE.parent / f"{PPT_FILE.stem}.pptx"
+
+    def save_ppt_safe(prs, target: Path):
+        tmp = target.with_suffix(".tmp.pptx")
+        prs.save(tmp)
+        os.replace(tmp, target)   # ✅ atomic replace – né lock / antivirus
+
+    # ✅ Lưu bản xem
+    save_ppt_safe(prs, file_view)
+    print(f"✅ Đã lưu file view: {file_view.name}")
+
+    # ✅ Lưu bản final (readonly + hidden)
+    save_ppt_safe(prs, file_final)
+
+    os.chmod(file_final, stat.S_IREAD)
+    subprocess.run(
+        f'attrib +H "{file_final}"',
+        shell=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL
+    )
+
+    print(f"✅ Đã lưu file final (ẩn + readonly): {file_final.name}")
     print("🎉 HOÀN TẤT")
+
 
 if __name__ == "__main__":
     main()
