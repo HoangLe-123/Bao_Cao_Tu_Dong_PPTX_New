@@ -135,32 +135,32 @@ def save_figure(fig, output_file):
     plt.close(fig)
 
 #========== Chính ==========
-EXCEL_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Hằng ngày_data_view.xlsx")
-EXCEL_SHEET = "Hằng ngày"
-EXCEL_YEAR_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Tính sản xuất năm 2026.xlsx")
-EXCEL_YEAR_SHEET = "NĂM 2026"
-EXCEL_THUCTICH_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\ThucTich_Data.xlsx")
-EXCEL_THUCTICH_SHEET = "Sheet1"
-EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\CONG VIEC CHUNG 2026\★2026年度年次目標設定\5.COSTDOWN 2026\5.MỤC TIÊU 2026\COSTDOWN 2026\Costdown nội tác 2026.xlsx")
-EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
-EXCEL_TIMER_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\DulieutudongTimer_view.xlsx")
-EXCEL_TIMER_SHEET = "Tong_Hop"
-PPT_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Bao_Cao_Hang_Ngay.pptx")
-ROW_DATE = "Ngày làm việc"
+# EXCEL_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Hằng ngày_data_view.xlsx")
+# EXCEL_SHEET = "Hằng ngày"
+# EXCEL_YEAR_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Tính sản xuất năm 2026.xlsx")
+# EXCEL_YEAR_SHEET = "NĂM 2026"
+# EXCEL_THUCTICH_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\ThucTich_Data.xlsx")
+# EXCEL_THUCTICH_SHEET = "Sheet1"
+# EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\CONG VIEC CHUNG 2026\★2026年度年次目標設定\5.COSTDOWN 2026\5.MỤC TIÊU 2026\COSTDOWN 2026\Costdown nội tác 2026.xlsx")
+# EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
+# EXCEL_TIMER_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\DulieutudongTimer_view.xlsx")
+# EXCEL_TIMER_SHEET = "Tong_Hop"
+# PPT_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Bao_Cao_Hang_Ngay.pptx")
+# ROW_DATE = "Ngày làm việc"
 
 # ========== Test ==========
-# EXCEL_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Hằng ngày_data.xlsx")
-# EXCEL_SHEET = "Hằng ngày"
-# EXCEL_YEAR_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Tính sản xuất năm 2026.xlsx")
-# EXCEL_YEAR_SHEET = "NĂM 2026"
-# EXCEL_THUCTICH_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\ThucTich_Data.xlsx")
-# EXCEL_THUCTICH_SHEET = "Sheet1"
-# EXCEL_COSTDOWN_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Costdown nội tác 2026.xlsx")
-# EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
-# EXCEL_TIMER_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\DulieutudongTimer.xlsx")
-# EXCEL_TIMER_SHEET = "Tong_Hop"
-# PPT_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Bao_Cao_Hang_Ngay.pptx")
-# ROW_DATE = "Ngày làm việc"
+EXCEL_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Hằng ngày_data.xlsx")
+EXCEL_SHEET = "Hằng ngày"
+EXCEL_YEAR_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Tính sản xuất năm 2026.xlsx")
+EXCEL_YEAR_SHEET = "NĂM 2026"
+EXCEL_THUCTICH_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\ThucTich_Data.xlsx")
+EXCEL_THUCTICH_SHEET = "Sheet1"
+EXCEL_COSTDOWN_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Costdown nội tác 2026.xlsx")
+EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
+EXCEL_TIMER_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\DulieutudongTimer_view - Copy.xlsx")
+EXCEL_TIMER_SHEET = "Tong_Hop"
+PPT_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Bao_Cao_Hang_Ngay.pptx")
+ROW_DATE = "Ngày làm việc"
 
 
 LOCAL_OUT_DIR = Path(tempfile.gettempdir()) / "BaoCaoHangNgay"
@@ -1508,7 +1508,7 @@ def draw_timer_block_chart_manual_style(df, title, output_file):
     ax.bar(x, tat_may, width=bar_width,  bottom=co_tai + khong_tai, color="#A6A6A6", label="% Tắt máy")
 
 
-    SHOW_TEXT = len(df) <= 30
+    SHOW_TEXT = len(df) <= 60
 
     if SHOW_TEXT:
         for i, v in enumerate(co_tai):
@@ -2609,10 +2609,24 @@ def main():
     file_view = PPT_FILE.parent / f"{PPT_FILE.stem}_view.pptx"
     file_final = PPT_FILE.parent / f"{PPT_FILE.stem}.pptx"
 
-    def save_ppt_safe(prs, target: Path):
+    def save_ppt_safe(prs, target: Path, retry=5, delay=1):
         tmp = target.with_suffix(".tmp.pptx")
         prs.save(tmp)
-        os.replace(tmp, target)   # ✅ atomic replace – né lock / antivirus
+
+        for i in range(retry):
+            try:
+                # ✅ Nếu file tồn tại → bỏ readonly trước
+                if target.exists():
+                    os.chmod(target, stat.S_IWRITE)
+
+                os.replace(tmp, target)   # atomic replace
+                return
+
+            except PermissionError:
+                print(f"⚠️ File đang bị lock ({target.name}) → retry {i+1}/{retry}")
+                time.sleep(delay)
+
+        raise PermissionError(f"❌ Không thể ghi file: {target}")
 
     # ✅ Lưu bản xem
     save_ppt_safe(prs, file_view)
