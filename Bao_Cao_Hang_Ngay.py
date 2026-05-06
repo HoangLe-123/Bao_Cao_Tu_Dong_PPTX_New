@@ -135,38 +135,38 @@ def save_figure(fig, output_file):
     plt.close(fig)
 
 #========== Chính ==========
-# EXCEL_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Hằng ngày_data_view.xlsx")
-# EXCEL_SHEET = "Hằng ngày"
-# EXCEL_YEAR_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Tính sản xuất năm 2026.xlsx")
-# EXCEL_YEAR_SHEET = "NĂM 2026"
-# EXCEL_THUCTICH_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\ThucTich_Data.xlsx")
-# EXCEL_THUCTICH_SHEET = "Sheet1"
-# EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\CONG VIEC CHUNG 2026\★2026年度年次目標設定\5.COSTDOWN 2026\5.MỤC TIÊU 2026\COSTDOWN 2026\Costdown nội tác 2026.xlsx")
-# EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
-# EXCEL_TIMER_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\DulieutudongTimer_view.xlsx")
-# EXCEL_TIMER_SHEET = "Tong_Hop"
-# PPT_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Bao_Cao_Hang_Ngay.pptx")
-# ROW_DATE = "Ngày làm việc"
+EXCEL_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Hằng ngày_data_view.xlsx")
+EXCEL_SHEET = "Hằng ngày"
+EXCEL_YEAR_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Tính sản xuất năm 2026.xlsx")
+EXCEL_YEAR_SHEET = "NĂM 2026"
+EXCEL_THUCTICH_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\ThucTich_Data.xlsx")
+EXCEL_THUCTICH_SHEET = "Sheet1"
+EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\CONG VIEC CHUNG 2026\★2026年度年次目標設定\5.COSTDOWN 2026\5.MỤC TIÊU 2026\COSTDOWN 2026\Costdown nội tác 2026.xlsx")
+EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
+EXCEL_TIMER_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\DulieutudongTimer_view.xlsx")
+EXCEL_TIMER_SHEET = "Tong_Hop"
+PPT_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\Bao_Cao_Hang_Ngay.pptx")
+ROW_DATE = "Ngày làm việc"
 
 # ========== Test ==========
-EXCEL_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Hằng ngày_data.xlsx")
-EXCEL_SHEET = "Hằng ngày"
-EXCEL_YEAR_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Tính sản xuất năm 2026.xlsx")
-EXCEL_YEAR_SHEET = "NĂM 2026"
-EXCEL_THUCTICH_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\ThucTich_Data.xlsx")
-EXCEL_THUCTICH_SHEET = "Sheet1"
-EXCEL_COSTDOWN_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Costdown nội tác 2026.xlsx")
-EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
-EXCEL_TIMER_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\DulieutudongTimer_view - Copy.xlsx")
-EXCEL_TIMER_SHEET = "Tong_Hop"
-PPT_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Bao_Cao_Hang_Ngay.pptx")
-ROW_DATE = "Ngày làm việc"
+# EXCEL_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Hằng ngày_data.xlsx")
+# EXCEL_SHEET = "Hằng ngày"
+# EXCEL_YEAR_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Tính sản xuất năm 2026.xlsx")
+# EXCEL_YEAR_SHEET = "NĂM 2026"
+# EXCEL_THUCTICH_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\ThucTich_Data.xlsx")
+# EXCEL_THUCTICH_SHEET = "Sheet1"
+# EXCEL_COSTDOWN_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Costdown nội tác 2026.xlsx")
+# EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
+# EXCEL_TIMER_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\DulieutudongTimer_view - Copy.xlsx")
+# EXCEL_TIMER_SHEET = "Tong_Hop"
+# PPT_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Bao_Cao_Hang_Ngay.pptx")
+# ROW_DATE = "Ngày làm việc"
 
 
 LOCAL_OUT_DIR = Path(tempfile.gettempdir()) / "BaoCaoHangNgay"
 LOCAL_OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-SERVER_OUT_DIR = Path(r"charts")
+SERVER_OUT_DIR = Path(tempfile.gettempdir()) / "charts"
 SERVER_OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 REQUIRED_FILES = {
@@ -2593,7 +2593,7 @@ def main():
     update_title_in_ppt(
         prs,
         slide_index=3,                      # ✅ SLIDE 4
-        title_text="TỈ LỆ HOẠT ĐỘNG MÁY TẠI CÁC CÔNG ĐOẠN TRONG THÁNG",
+        title_text=f"TỈ LỆ HOẠT ĐỘNG MÁY TẠI CÁC CÔNG ĐOẠN TRONG THÁNG {datetime.now().strftime('%m/%Y')}",
         title_shape_name="title_timer",     # ✅ đúng tên textbox title trong PPT
         font_name="Calibri",
         font_size_pt=20,
@@ -2609,24 +2609,54 @@ def main():
     file_view = PPT_FILE.parent / f"{PPT_FILE.stem}_view.pptx"
     file_final = PPT_FILE.parent / f"{PPT_FILE.stem}.pptx"
 
-    def save_ppt_safe(prs, target: Path, retry=5, delay=1):
-        tmp = target.with_suffix(".tmp.pptx")
-        prs.save(tmp)
+    def save_ppt_safe(prs, target: Path, retry=8, delay=1.2):
+
+        def is_file_locked(path: Path):
+            try:
+                with open(path, "a"):
+                    return False
+            except PermissionError:
+                return True
+
+        # ===== CHECK LOCK (CHỈ CẢNH BÁO) =====
+        if target.exists() and is_file_locked(target):
+            print(f"⚠️ File có thể đang bị mở: {target}")
+
+        # ===== BỎ READONLY =====
+        if target.exists():
+            try:
+                os.chmod(target, stat.S_IWRITE)
+            except:
+                pass
+
+        # ===== SAVE LOCAL =====
+        local_tmp = Path(tempfile.gettempdir()) / target.name
+        prs.save(local_tmp)
+
+        # ===== CHỜ UNC NHẢ LOCK =====
+        time.sleep(0.3)
+
+        # ===== COPY + REPLACE =====
+        dst_tmp = target.with_suffix(".swap")
 
         for i in range(retry):
             try:
-                # ✅ Nếu file tồn tại → bỏ readonly trước
-                if target.exists():
-                    os.chmod(target, stat.S_IWRITE)
-
-                os.replace(tmp, target)   # atomic replace
-                return
-
+                shutil.copyfile(local_tmp, dst_tmp)
+                os.replace(dst_tmp, target)
+                print("✅ Ghi file thành công")
+                break
             except PermissionError:
-                print(f"⚠️ File đang bị lock ({target.name}) → retry {i+1}/{retry}")
+                print(f"⚠️ Server lock → retry {i+1}/{retry}")
                 time.sleep(delay)
+        else:
+            raise PermissionError(f"❌ Không thể ghi file server: {target}")
 
-        raise PermissionError(f"❌ Không thể ghi file: {target}")
+        # ===== SET READONLY =====
+        try:
+            os.chmod(target, stat.S_IREAD)
+        except:
+            pass
+
 
     # ✅ Lưu bản xem
     save_ppt_safe(prs, file_view)
