@@ -141,7 +141,7 @@ EXCEL_YEAR_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP
 EXCEL_YEAR_SHEET = "NĂM 2026"
 EXCEL_THUCTICH_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\ThucTich_Data.xlsx")
 EXCEL_THUCTICH_SHEET = "Sheet1"
-EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\CONG VIEC CHUNG 2026\★2026年度年次目標設定\5.COSTDOWN 2026\5.MỤC TIÊU 2026\COSTDOWN 2026\Costdown nội tác 2026.xlsx")
+EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\1.TAI LIEU HANG NAM\2026\1.MUC TIEU NAM\5.COSTDOWN\COSTDOWN 2026\Costdown noi tac 2026.xlsx")
 EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
 EXCEL_TIMER_FILE = Path(r"\\vdm-fsvr\Du lieu dung chung VDM\PROJECT-IT HOA NGHIEP VU\Báo Cáo Hằng Ngày CK\DulieutudongTimer_view.xlsx")
 EXCEL_TIMER_SHEET = "Tong_Hop"
@@ -2259,11 +2259,15 @@ def process_costdown_mt_tt_month(prs):
 
     img_path_local = LOCAL_OUT_DIR / "costdown_mt_tt_thang_4.png"
 
+    today = datetime.now()
+    title_dynamic = f"MỤC TIÊU – THỰC TÍCH THÁNG {today.month}/{today.year}"
+
     draw_costdown_mt_tt_month_chart(
         df,
-        "MỤC TIÊU – THỰC TÍCH THÁNG 4/2026",
+        title_dynamic,
         img_path_local
     )
+
 
 
     # ✅ COPY LÊN SERVER
