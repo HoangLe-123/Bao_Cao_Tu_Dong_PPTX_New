@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['Bao_Cao_Hang_Ngay.py'],
+    ['Bao_Cao_Hang_Ngay_0604.py'],
     pathex=[],
     binaries=[],
     datas=[],
