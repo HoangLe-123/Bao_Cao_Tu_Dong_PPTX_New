@@ -135,36 +135,36 @@ def save_figure(fig, output_file):
     plt.close(fig)
 
 #========== Chính ==========
-EXCEL_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Hằng ngày_data_view.xlsx")
-EXCEL_SHEET = "Hằng ngày"
-EXCEL_YEAR_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Tính sản xuất năm 2026.xlsx")
-EXCEL_YEAR_SHEET = "NĂM 2026"
-EXCEL_THUCTICH_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\ThucTich_Data.xlsx")
-EXCEL_THUCTICH_SHEET = "Sheet1"
-EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\1.TAI LIEU HANG NAM\2026\1.MUC TIEU NAM\5.COSTDOWN\COSTDOWN 2026\Costdown noi tac 2026.xlsx")
-EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
-EXCEL_TIMER_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\DulieutudongTimer_view.xlsx")
-EXCEL_TIMER_SHEET = "Tong_Hop"
-EXCEL_TIMER_KHONG_NGUOI_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Dulieukhongnguoi.xlsx")
-EXCEL_TIMER_KHONG_NGUOI_SHEET = "KhongNguoi"
-PPT_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Bao_Cao_Hang_Ngay.pptx")
-ROW_DATE = "Ngày làm việc"
+# EXCEL_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Hằng ngày_data_view.xlsx")
+# EXCEL_SHEET = "Hằng ngày"
+# EXCEL_YEAR_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Tính sản xuất năm 2026.xlsx")
+# EXCEL_YEAR_SHEET = "NĂM 2026"
+# EXCEL_THUCTICH_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\ThucTich_Data.xlsx")
+# EXCEL_THUCTICH_SHEET = "Sheet1"
+# EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\1.TAI LIEU HANG NAM\2026\1.MUC TIEU NAM\5.COSTDOWN\COSTDOWN 2026\Costdown noi tac 2026.xlsx")
+# EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
+# EXCEL_TIMER_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\DulieutudongTimer_view.xlsx")
+# EXCEL_TIMER_SHEET = "Tong_Hop"
+# EXCEL_TIMER_KHONG_NGUOI_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Dulieukhongnguoi.xlsx")
+# EXCEL_TIMER_KHONG_NGUOI_SHEET = "KhongNguoi"
+# PPT_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Bao_Cao_Hang_Ngay.pptx")
+# ROW_DATE = "Ngày làm việc"
 
 # ========== Test ==========
-# EXCEL_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Hằng ngày_data.xlsx")
-# EXCEL_SHEET = "Hằng ngày"
-# EXCEL_YEAR_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Tính sản xuất năm 2026.xlsx")
-# EXCEL_YEAR_SHEET = "NĂM 2026"
-# EXCEL_THUCTICH_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\ThucTich_Data.xlsx")
-# EXCEL_THUCTICH_SHEET = "Sheet1"
-# EXCEL_COSTDOWN_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Costdown nội tác 2026.xlsx")
-# EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
-# EXCEL_TIMER_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\DulieutudongTimer_view.xlsx")
-# EXCEL_TIMER_SHEET = "Tong_Hop"
-# EXCEL_TIMER_KHONG_NGUOI_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Dulieukhongnguoi.xlsx")
-# EXCEL_TIMER_KHONG_NGUOI_SHEET = "KhongNguoi"
-# PPT_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Bao_Cao_Hang_Ngay.pptx")
-# ROW_DATE = "Ngày làm việc"
+EXCEL_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Hằng ngày_data.xlsx")
+EXCEL_SHEET = "Hằng ngày"
+EXCEL_YEAR_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Tính sản xuất năm 2026.xlsx")
+EXCEL_YEAR_SHEET = "NĂM 2026"
+EXCEL_THUCTICH_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\ThucTich_Data.xlsx")
+EXCEL_THUCTICH_SHEET = "Sheet1"
+EXCEL_COSTDOWN_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Costdown nội tác 2026.xlsx")
+EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
+EXCEL_TIMER_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\DulieutudongTimer_view.xlsx")
+EXCEL_TIMER_SHEET = "Tong_Hop"
+EXCEL_TIMER_KHONG_NGUOI_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Dulieukhongnguoi.xlsx")
+EXCEL_TIMER_KHONG_NGUOI_SHEET = "KhongNguoi"
+PPT_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Bao_Cao_Hang_Ngay.pptx")
+ROW_DATE = "Ngày làm việc"
 
 
 LOCAL_OUT_DIR = Path(tempfile.gettempdir()) / "BaoCaoHangNgay"
@@ -2361,9 +2361,9 @@ def process_timer_utilization_chart(prs):
     # Dữ liệu mục tiêu được nhập sẵn trong code theo yêu cầu của bạn
     # Cấu trúc: "Tên công đoạn": giá trị (ví dụ 0.8 tương ứng 80%)
     hardcoded_targets = {
-        "LA": 0.21, "MA": 0.30, "BJ": 0.30, "GC": 0.37, "GS": 0.35, 
-        "GR": 0.50, "EN": 0.55, "GJ": 0.50, "MC": 0.61, "LN": 0.62, 
-        "EW": 0.62, "GP": 0.70
+        "LA": 0.21, "MA": 0.30, "BJ": 0.30, "GC": 0.35, "GS": 0.35, 
+        "GR": 0.50, "EN": 0.60, "GJ": 0.50, "MC": 0.65, "LN": 0.65, 
+        "EW": 0.68, "GP": 0.70
     }
 
     # Chuẩn hóa dữ liệu về dạng thập phân (0.xx) để khớp với logic nhân 100 khi vẽ
