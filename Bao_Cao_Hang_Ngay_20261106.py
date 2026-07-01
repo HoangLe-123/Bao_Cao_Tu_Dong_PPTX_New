@@ -16,6 +16,7 @@ from pptx.enum.text import MSO_VERTICAL_ANCHOR
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from datetime import datetime
+from scipy.interpolate import make_interp_spline
 from matplotlib.patches import Patch
 from matplotlib.lines import Line2D
 from pptx.util import Pt
@@ -135,36 +136,36 @@ def save_figure(fig, output_file):
     plt.close(fig)
 
 #========== Chính ==========
-# EXCEL_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Hằng ngày_data_view.xlsx")
-# EXCEL_SHEET = "Hằng ngày"
-# EXCEL_YEAR_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Tính sản xuất năm 2026.xlsx")
-# EXCEL_YEAR_SHEET = "NĂM 2026"
-# EXCEL_THUCTICH_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\ThucTich_Data.xlsx")
-# EXCEL_THUCTICH_SHEET = "Sheet1"
-# EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\1.TAI LIEU HANG NAM\2026\1.MUC TIEU NAM\5.COSTDOWN\COSTDOWN 2026\Costdown noi tac 2026.xlsx")
-# EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
-# EXCEL_TIMER_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\DulieutudongTimer_view.xlsx")
-# EXCEL_TIMER_SHEET = "Tong_Hop"
-# EXCEL_TIMER_KHONG_NGUOI_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Dulieukhongnguoi.xlsx")
-# EXCEL_TIMER_KHONG_NGUOI_SHEET = "KhongNguoi"
-# PPT_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Bao_Cao_Hang_Ngay.pptx")
-# ROW_DATE = "Ngày làm việc"
+EXCEL_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Hằng ngày_data_view.xlsx")
+EXCEL_SHEET = "Hằng ngày"
+EXCEL_YEAR_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Tính sản xuất năm 2026.xlsx")
+EXCEL_YEAR_SHEET = "NĂM 2026"
+EXCEL_THUCTICH_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\ThucTich_Data.xlsx")
+EXCEL_THUCTICH_SHEET = "Sheet1"
+EXCEL_COSTDOWN_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\1.TAI LIEU HANG NAM\2026\1.MUC TIEU NAM\5.COSTDOWN\COSTDOWN 2026\Costdown noi tac 2026.xlsx")
+EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
+EXCEL_TIMER_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\DulieutudongTimer_view.xlsx")
+EXCEL_TIMER_SHEET = "Tong_Hop"
+EXCEL_TIMER_KHONG_NGUOI_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Dulieukhongnguoi.xlsx")
+EXCEL_TIMER_KHONG_NGUOI_SHEET = "KhongNguoi"
+PPT_FILE = Path(r"\\vdm-fsvr\Cokhi-機工\5.TAI LIEU KHAC\1.DU LIEU DOWNLOAD AUTO\2.BAO CAO HANG NGAY\Bao_Cao_Hang_Ngay.pptx")
+ROW_DATE = "Ngày làm việc"
 
 # ========== Test ==========
-EXCEL_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Hằng ngày_data.xlsx")
-EXCEL_SHEET = "Hằng ngày"
-EXCEL_YEAR_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Tính sản xuất năm 2026.xlsx")
-EXCEL_YEAR_SHEET = "NĂM 2026"
-EXCEL_THUCTICH_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\ThucTich_Data.xlsx")
-EXCEL_THUCTICH_SHEET = "Sheet1"
-EXCEL_COSTDOWN_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Costdown nội tác 2026.xlsx")
-EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
-EXCEL_TIMER_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\DulieutudongTimer_view.xlsx")
-EXCEL_TIMER_SHEET = "Tong_Hop"
-EXCEL_TIMER_KHONG_NGUOI_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Dulieukhongnguoi.xlsx")
-EXCEL_TIMER_KHONG_NGUOI_SHEET = "KhongNguoi"
-PPT_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Bao_Cao_Hang_Ngay.pptx")
-ROW_DATE = "Ngày làm việc"
+# EXCEL_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Hằng ngày_data.xlsx")
+# EXCEL_SHEET = "Hằng ngày"
+# EXCEL_YEAR_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Tính sản xuất năm 2026.xlsx")
+# EXCEL_YEAR_SHEET = "NĂM 2026"
+# EXCEL_THUCTICH_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\ThucTich_Data.xlsx")
+# EXCEL_THUCTICH_SHEET = "Sheet1"
+# EXCEL_COSTDOWN_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Costdown nội tác 2026.xlsx")
+# EXCEL_COSTDOWN_SHEET = "Quản lý MT năm"
+# EXCEL_TIMER_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\DulieutudongTimer_view.xlsx")
+# EXCEL_TIMER_SHEET = "Tong_Hop"
+# EXCEL_TIMER_KHONG_NGUOI_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Excel\Dulieukhongnguoi.xlsx")
+# EXCEL_TIMER_KHONG_NGUOI_SHEET = "KhongNguoi"
+# PPT_FILE = Path(r"D:\Code_cokhi\Bao_Cao_Tu_Dong_PPTX_New\Bao_Cao_Hang_Ngay.pptx")
+# ROW_DATE = "Ngày làm việc"
 
 
 LOCAL_OUT_DIR = Path(tempfile.gettempdir()) / "BaoCaoHangNgay"
@@ -555,28 +556,28 @@ def draw_combo_chart_global(df, title, ylabel, output_file, legend_prefix=""):
             )
 
     # ======================
-    # LINE – MỤC TIÊU
+    # LINE – MỤC TIÊU & CÒN LẠI (SMOOTH)
     # ======================
-    ax.plot(
-        df["X"], df["LINE1"],
-        color=CHART_THEME["line"]["target_month"],
-        linestyle=CHART_THEME["linestyle"]["target"],
-        marker=CHART_THEME["marker"]["target"],
-        linewidth=2,
-        label=f"Mục tiêu {legend_prefix} hoàn thành" if legend_prefix else "Mục tiêu hoàn thành"
-    )
+    for col, color, ls, mk, lw, lbl in [
+        ("LINE1", CHART_THEME["line"]["target_month"], CHART_THEME["linestyle"]["target"], CHART_THEME["marker"]["target"], 2, f"Mục tiêu {legend_prefix} h/thành"),
+        ("LINE2", "red", CHART_THEME["linestyle"]["remain"], CHART_THEME["marker"]["remain"], 1.6, f"Mục tiêu {legend_prefix} còn lại")
+    ]:
+        y_vals = df[col].values
+        x_vals = df["X"].values
+        # Lọc bỏ NaN/Zero để spline không bị lỗi
+        mask = y_vals > 0
+        if mask.sum() >= 2:
+            xv, yv = x_vals[mask], y_vals[mask]
+            k = min(3, len(xv) - 1)
+            x_smooth = np.linspace(xv.min(), xv.max(), 300)
+            spl = make_interp_spline(xv, yv, k=k)
+            y_smooth = spl(x_smooth)
+            
+            ax.plot(x_smooth, y_smooth, color=color, linestyle=ls, linewidth=lw, label=lbl, zorder=5)
+            ax.scatter(xv, yv, color=color, marker=mk, s=40, zorder=6)
+        else:
+            ax.plot(x_vals, y_vals, color=color, linestyle=ls, marker=mk, linewidth=lw, label=lbl)
 
-    # ======================
-    # LINE – CÒN LẠI (LŨY KẾ)
-    # ======================
-    ax.plot(
-        df["X"], df["LINE2"],
-        color="red",
-        linestyle=CHART_THEME["linestyle"]["remain"],
-        marker=CHART_THEME["marker"]["remain"],
-        linewidth=1.6,
-        label=f"Mục tiêu {legend_prefix} còn lại" if legend_prefix else "Mục tiêu còn lại"
-    )
     # ======================
     # NÂNG TRẦN TRỤC Y (HEADROOM) – SAFE
     # ======================
@@ -805,14 +806,18 @@ def draw_combo_chart_block_excel_style(df_daily, df_month, title, ylabel, output
                     )
 
         if "Mục tiêu" in df_month.columns:
-            h_mt_month, = ax_left.plot(
-                df_month["X"],
-                df_month["Mục tiêu"].replace(0, np.nan),
-                color=CHART_THEME["line"]["target_month"],
-                linestyle=CHART_THEME["linestyle"]["target"],
-                marker=CHART_THEME["marker"]["target"],
-                linewidth=2.0
-            )
+            mt_vals = df_month["Mục tiêu"].values
+            x_m = df_month["X"].values
+            mask_m = mt_vals > 0
+            if mask_m.sum() >= 2:
+                xv, yv = x_m[mask_m], mt_vals[mask_m]
+                k = min(3, len(xv)-1)
+                x_smooth = np.linspace(xv.min(), xv.max(), 300)
+                spl = make_interp_spline(xv, yv, k=k)
+                h_mt_month, = ax_left.plot(x_smooth, spl(x_smooth), color=CHART_THEME["line"]["target_month"], zorder=5)
+                ax_left.scatter(xv, yv, color=CHART_THEME["line"]["target_month"], marker=CHART_THEME["marker"]["target"], s=40, zorder=6)
+            else:
+                h_mt_month, = ax_left.plot(x_m, mt_vals, color=CHART_THEME["line"]["target_month"], marker=CHART_THEME["marker"]["target"])
 
             # ===== DATA LABEL – MỤC TIÊU (THÁNG) =====
             for x_val, y_val in zip(df_month["X"], df_month["Mục tiêu"]):
@@ -929,40 +934,33 @@ def draw_combo_chart_block_excel_style(df_daily, df_month, title, ylabel, output
 
 
 
-        # Mục tiêu Ngày
-        if "Mục tiêu" in df_daily.columns:
-            h_mt_day, = ax_right.plot(
-                df_daily["X"],
-                df_daily["Mục tiêu"].replace(0, np.nan),
-                color=CHART_THEME["line"]["target_day"],
-                linestyle=CHART_THEME["linestyle"]["target"],
-                marker=CHART_THEME["marker"]["target"],
-                linewidth=1.8
-            )
-
-        # Còn lại Ca 1
-        if "Lũy kế Ca1" in df_daily.columns:
-            h_lk_ca1, = ax_right.plot(
-                df_daily["X"],
-                df_daily["Lũy kế Ca1"].replace(0, np.nan),
-                color=CHART_THEME["line"]["remain_ca1"],
-                linestyle=CHART_THEME["linestyle"]["remain"],
-                marker=CHART_THEME["marker"]["remain"],
-                markersize=5,
-                linewidth=1.4
-            )
-
-        # Còn lại Ca 2
-        if "Lũy kế Ca2" in df_daily.columns:
-            h_lk_ca2, = ax_right.plot(
-                df_daily["X"],
-                df_daily["Lũy kế Ca2"].replace(0, np.nan),
-                color=CHART_THEME["line"]["remain_ca2"],
-                linestyle=CHART_THEME["linestyle"]["remain"],
-                marker=CHART_THEME["marker"]["remain"],
-                markersize=5,
-                linewidth=1.4
-            )
+        # Mục tiêu & Còn lại Ngày (SMOOTH)
+        x_d = df_daily["X"].values
+        daily_handles = {
+            "h_mt_day": None,
+            "h_lk_ca1": None,
+            "h_lk_ca2": None
+        }
+        for col, color, ls, mk, lw, key in [
+            ("Mục tiêu", CHART_THEME["line"]["target_day"], "-", "o", 1.8, "h_mt_day"),
+            ("Lũy kế Ca1", CHART_THEME["line"]["remain_ca1"], "--", "s", 1.4, "h_lk_ca1"),
+            ("Lũy kế Ca2", CHART_THEME["line"]["remain_ca2"], "--", "s", 1.4, "h_lk_ca2")
+        ]:
+            if col in df_daily.columns:
+                y_vals = df_daily[col].values
+                mask = y_vals > 0
+                if mask.sum() >= 2:
+                    xv, yv = x_d[mask], y_vals[mask]
+                    k = min(3, len(xv)-1)
+                    x_smooth = np.linspace(xv.min(), xv.max(), 300)
+                    spl = make_interp_spline(xv, yv, k=k)
+                    line, = ax_right.plot(x_smooth, spl(x_smooth), color=color, linestyle=ls, linewidth=lw, zorder=5)
+                    ax_right.scatter(xv, yv, color=color, marker=mk, s=30, zorder=6)
+                    daily_handles[key] = line
+                else:
+                    line, = ax_right.plot(x_d, y_vals, color=color, linestyle=ls, marker=mk, linewidth=lw)
+                    daily_handles[key] = line
+        h_mt_day, h_lk_ca1, h_lk_ca2 = daily_handles["h_mt_day"], daily_handles["h_lk_ca1"], daily_handles["h_lk_ca2"]
 
         vals = pd.concat([
             df_daily["Ca1"],
@@ -1014,10 +1012,14 @@ def draw_combo_chart_block_excel_style(df_daily, df_month, title, ylabel, output
         f"{unit} h/thành Ca 1 (Ngày)",
         f"{unit} h/thành Ca 2 (Ngày)",
     ]
+    
+    # ✅ Lọc bỏ các handle None để legend hiển thị chính xác các mục có dữ liệu
+    final_handles = [h for h in legend_handles if h is not None]
+    final_labels = [l for h, l in zip(legend_handles, legend_labels) if h is not None]
 
     ax_left.legend(
-        legend_handles,
-        legend_labels,
+        final_handles,
+        final_labels,
         loc="upper center",
         bbox_to_anchor=(0.5, -0.125),
         ncol=4,
@@ -1368,7 +1370,7 @@ def draw_timer_utilization_chart(df, title, output_file,show_title=True):
         label="% Có tải"
     )
 
-    ax.bar(
+    bars_khong = ax.bar(
         x,
         khong_tai,
         bottom=co_tai,
@@ -1376,7 +1378,7 @@ def draw_timer_utilization_chart(df, title, output_file,show_title=True):
         label="% Không tải"
     )
 
-    ax.bar(
+    bars_tat = ax.bar(
         x,
         tat_may,
         bottom=co_tai + khong_tai,
@@ -1385,41 +1387,37 @@ def draw_timer_utilization_chart(df, title, output_file,show_title=True):
     )
 
     # ======================
-    # DATA LABEL – CHỈ % CÓ TẢI
+    # DATA LABEL – CÁC PHÂN ĐOẠN (ẨN NẾU < 10%)
     # ======================
-    for bar, v in zip(bars_co, co_tai):
-        if v >= 0:   # ✅ chỉ hiện khi đủ đáng chú ý
-            ax.text(
-                bar.get_x() + bar.get_width()/2,
-                v / 2,
-                f"{int(round(v))}%",
-                ha="center",
-                va="center",
-                fontsize=11,
-                fontweight="bold",
-                color="black",
-                bbox=dict(
-                    boxstyle="round,pad=0.2",
-                    facecolor="white",
-                    alpha=0.75,
-                    edgecolor="none"
-                )
-            )
+    LABEL_BOX = dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.75, edgecolor="none")
+
+    for i in range(len(x)):
+        v_c = co_tai.iloc[i]
+        v_k = khong_tai.iloc[i]
+        v_t = tat_may.iloc[i]
+
+        # Có tải
+        if v_c >= 10:
+            ax.text(x[i], v_c / 2, f"{int(round(v_c))}%", ha="center", va="center", fontsize=11, fontweight="bold", bbox=LABEL_BOX)
+        # # Không tải
+        # if v_k >= 10:
+        #     ax.text(x[i], v_c + v_k / 2, f"{int(round(v_k))}%", ha="center", va="center", fontsize=11, fontweight="bold", bbox=LABEL_BOX)
+        # # Tắt máy
+        # if v_t >= 10:
+        #     ax.text(x[i], v_c + v_k + v_t / 2, f"{int(round(v_t))}%", ha="center", va="center", fontsize=11, fontweight="bold", bbox=LABEL_BOX)
 
     # ======================
     # LINE – % MỤC TIÊU (PHỤ)
     # ======================
-    ax.plot(
-        x,
-        target,
-        color="red",
-        linestyle="--",
-        marker="o",
-        markersize=6,
-        linewidth=2.5,   # ✅ dày hơn chút
-        label="% Mục tiêu",
-        zorder=5
-    )
+    # Tạo đường cong mượt mà (spline interpolation)
+    x_smooth = np.linspace(x.min(), x.max(), 300)
+    spl = make_interp_spline(x, target, k=3)
+    target_smooth = np.clip(spl(x_smooth), 0, 100) # Đảm bảo đường cong không vượt quá 0-100%
+
+    ax.plot(x_smooth, target_smooth, color="red", linestyle="--", linewidth=2.5, label="% Mục tiêu", zorder=5)
+    
+    # Vẽ marker tại các vị trí gốc để giữ đúng điểm dữ liệu
+    ax.scatter(x, target, color="red", marker="o", s=60, zorder=6)
 
     # DATA LABEL – MỤC TIÊU (TRÊN LINE)
     for i, v in enumerate(target):
@@ -1743,28 +1741,32 @@ def draw_year_bv_pcs_combo_chart(df, title, output_file,show_title=True):
                 )
 
     # ======================
-    # LINE – PCS (NHÂN VẬT PHỤ)
+    # LINE – PCS (SMOOTH)
     # ======================
-    ax2.plot(
-        x,
-        df["MT PCS"],
-        color=COL_PCS_TARGET,
-        linestyle="-",
-        marker="o",
-        linewidth=2.0,
-        label="Mục tiêu PCS"
-    )
+    mt_pcs = df["MT PCS"].values
+    mask_pcs = mt_pcs > 0
+    if mask_pcs.sum() >= 2:
+        xv, yv = x[mask_pcs], mt_pcs[mask_pcs]
+        k = min(3, len(xv)-1)
+        x_smooth = np.linspace(xv.min(), xv.max(), 300)
+        spl = make_interp_spline(xv, yv, k=k)
+        ax2.plot(x_smooth, spl(x_smooth), color=COL_PCS_TARGET, linewidth=2.0, label="Mục tiêu PCS", zorder=5)
+        ax2.scatter(xv, yv, color=COL_PCS_TARGET, marker="o", s=40, zorder=6)
+    else:
+        ax2.plot(x, mt_pcs, color=COL_PCS_TARGET, marker="o", linewidth=2.0, label="Mục tiêu PCS")
 
-    ax2.plot(
-        x,
-        df["TT PCS"],
-        color=COL_PCS_ACTUAL,
-        linestyle="--",     # ✅ NÉT ĐỨT = PHỤ
-        marker=None,        # ✅ KHÔNG MARKER
-        linewidth=1.6,
-        alpha=0.85,
-        label="Thực tích PCS"
-    )
+    # ----- TT PCS (SMOOTH) -----
+    tt_pcs = df["TT PCS"].values
+    mask_tt = tt_pcs > 0
+    if mask_tt.sum() >= 2:
+        xv_t, yv_t = x[mask_tt], tt_pcs[mask_tt]
+        k_t = min(3, len(xv_t)-1)
+        x_smooth_t = np.linspace(xv_t.min(), xv_t.max(), 300)
+        spl_t = make_interp_spline(xv_t, yv_t, k=k_t)
+        ax2.plot(x_smooth_t, spl_t(x_smooth_t), color=COL_PCS_ACTUAL, linestyle="--", linewidth=1.6, alpha=0.85, label="Thực tích PCS", zorder=5)
+        ax2.scatter(xv_t, yv_t, color=COL_PCS_ACTUAL, marker="s", s=25, alpha=0.8, zorder=6) # Thêm marker vuông nhỏ
+    else:
+        ax2.plot(x, tt_pcs, color=COL_PCS_ACTUAL, linestyle="--", linewidth=1.6, alpha=0.85, label="Thực tích PCS")
 
     # ======================
     # DATA LABEL – PCS (HALO + OFFSET ĐỀU)
@@ -2297,19 +2299,23 @@ def process_timer_utilization_chart(prs):
     # Danh sách các ngày nghỉ cố định trong năm (Lễ, Tết, hoặc ngày nghỉ công ty)
     # Bạn có thể thêm bớt ngày theo định dạng "YYYY-MM-DD"
     fixed_holidays = [
-        # June
+        # April 2026
+        "2026-04-04", "2026-04-05", "2026-04-11", "2026-04-12", "2026-04-18", "2026-04-19", "2026-04-25", "2026-04-26", "2026-04-27", "2026-04-30",
+        # May 2026
+        "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-09", "2026-05-10", "2026-05-16", "2026-05-17", "2026-05-23", "2026-05-24", "2026-05-30", "2026-05-31",
+        # June 2026
         "2026-06-06", "2026-06-07", "2026-06-13", "2026-06-14", "2026-06-20", "2026-06-21", "2026-06-27", "2026-06-28",
-        # July
+        # July 2026
         "2026-07-04", "2026-07-05", "2026-07-11", "2026-07-12", "2026-07-18", "2026-07-19", "2026-07-25", "2026-07-26",
-        # August
+        # August 2026
         "2026-08-01", "2026-08-02", "2026-08-08", "2026-08-09", "2026-08-15", "2026-08-16", "2026-08-22", "2026-08-23", "2026-08-29", "2026-08-30",
-        # September (có lễ)
+        # September 2026 (có lễ)
         "2026-09-01","2026-09-02", "2026-09-06", "2026-09-12", "2026-09-13", "2026-09-19", "2026-09-20", "2026-09-26", "2026-09-27", 
-        # October
+        # October 2026
         "2026-10-03", "2026-10-04", "2026-10-10", "2026-10-11", "2026-10-17", "2026-10-18", "2026-10-24", "2026-10-25", "2026-10-31",
-        # November
+        # November 2026
         "2026-11-01", "2026-11-07", "2026-11-08", "2026-11-14", "2026-11-15", "2026-11-21", "2026-11-22", "2026-11-28", "2026-11-29",
-        # December
+        # December 2026
         "2026-12-05", "2026-12-06", "2026-12-12", "2026-12-13", "2026-12-19", "2026-12-20", "2026-12-26", "2026-12-27", "2026-12-31",
     ]
     holiday_dates = pd.to_datetime(fixed_holidays)
@@ -2328,20 +2334,28 @@ def process_timer_utilization_chart(prs):
             # Gán lại tên cột để dễ xử lý
             df_detail.columns = ["Ngày", "MT", "Không tải", "Có tải", "Tắt máy"]
             
-            # Chuyển sang datetime và lọc bỏ các dòng không có ngày
-            df_detail["Ngày"] = pd.to_datetime(df_detail["Ngày"], errors='coerce')
+            # Chuyển sang datetime với dayfirst=True để xử lý đúng định dạng DD/MM/YYYY
+            df_detail["Ngày"] = pd.to_datetime(df_detail["Ngày"], dayfirst=True, errors='coerce')
             df_detail = df_detail.dropna(subset=["Ngày"])
+
+            # Chỉ lấy dữ liệu tính đến hết ngày hôm qua
+            df_detail = df_detail[df_detail["Ngày"].dt.date < datetime.now().date()]
             
             # Loại bỏ các ngày nghỉ cố định (Chủ Nhật - weekday=6)
             df_detail = df_detail[~df_detail["Ngày"].dt.weekday.isin([5, 6])] # Loại bỏ Thứ Bảy (5) và Chủ Nhật (6)
             
             # Loại bỏ các ngày lễ đã khai báo trong danh sách fixed_holidays
-            df_detail = df_detail[~df_detail["Ngày"].isin(holiday_dates)]
+            df_detail = df_detail[~df_detail["Ngày"].dt.normalize().isin(holiday_dates)]
 
-            # Tính tổng các giá trị (D, E, F) sau khi đã lọc ngày nghỉ
-            s_co = pd.to_numeric(df_detail["Có tải"], errors='coerce').sum()
-            s_khong = pd.to_numeric(df_detail["Không tải"], errors='coerce').sum()
-            s_tat = pd.to_numeric(df_detail["Tắt máy"], errors='coerce').sum()
+            # Chuẩn hóa dữ liệu số (thay dấu phẩy bằng dấu chấm nếu cần) trước khi tính tổng
+            for col in ["Có tải", "Không tải", "Tắt máy"]:
+                if df_detail[col].dtype == object:
+                    df_detail[col] = df_detail[col].str.replace(",", ".", regex=False)
+            
+            # Tính tổng các giá trị (giờ) sau khi đã lọc ngày nghỉ
+            s_co = pd.to_numeric(df_detail["Có tải"], errors='coerce').fillna(0).sum()
+            s_khong = pd.to_numeric(df_detail["Không tải"], errors='coerce').fillna(0).sum()
+            s_tat = pd.to_numeric(df_detail["Tắt máy"], errors='coerce').fillna(0).sum()
             
             total = s_co + s_khong + s_tat
             
@@ -2473,12 +2487,8 @@ def draw_timer_khong_nguoi_combo_chart(df_daily, df_month, title, output_file, s
     def normalize_percent(series):
         s = pd.to_numeric(series, errors="coerce").fillna(0)
 
-        # nếu dạng 0.01 → 1%
-        s = np.where(s <= 1, s * 100, s)
-
-        # nếu bị >100 bất thường (VD: 390) → chia lại
-        s = np.where(s > 200, s / 100, s)
-
+        # ✅ Loại bỏ logic tự động nhân 100 khi <= 1 vì các giá trị nhỏ như 0.9% là điểm phần trăm hợp lệ.
+        # Việc tự động scale gây ra sai lệch dữ liệu (0.9% biến thành 90%).
         return s.astype(float)
 
     fig, ax_left = plt.subplots(figsize=(30/2.54, 16/2.54))
@@ -2546,10 +2556,10 @@ def draw_timer_khong_nguoi_combo_chart(df_daily, df_month, title, output_file, s
         sau = normalize_percent(df_daily["TT_Sau22h30"])
         mt_day = normalize_percent(df_daily["Mục tiêu"])
 
-        # ✅ KHÔNG XOÁ DATA – CHỈ CLEAN NHẸ
-        co = np.clip(co, 0, 50)
-        an = np.clip(an, 0, 20)
-        sau = np.clip(sau, 0, 20)
+        # ✅ Nới lỏng giới hạn clip để phản ánh đúng dữ liệu thực tế từ Excel.
+        co = np.clip(co, 0, 100)
+        an = np.clip(an, 0, 100)
+        sau = np.clip(sau, 0, 100)
 
         # ✅ ÉP ĐỂ NHỎ VẪN NHÌN THẤY
         an_plot = np.where(an == 0, 0.05, an)
@@ -2576,17 +2586,20 @@ def draw_timer_khong_nguoi_combo_chart(df_daily, df_month, title, output_file, s
         )
 
         # =========================
-        # LINE TARGET
+        # LINE TARGET (SMOOTH)
         # =========================
-        mt_day_plot = np.where(mt_day <= 0, np.nan, mt_day)
-        ax_right.plot(
-            x_d, mt_day_plot,
-            color="#D32F2F",
-            linestyle="--",
-            marker="o",
-            linewidth=2,
-            label="Mục tiêu hoạt động máy không người (Ngày)"
-        )
+        mask_d = mt_day > 0
+        if mask_d.sum() >= 2:
+            xv, yv = x_d.values[mask_d], mt_day[mask_d]
+            k = min(3, len(xv)-1)
+            x_smooth = np.linspace(xv.min(), xv.max(), 300)
+            spl = make_interp_spline(xv, yv, k=k)
+            ax_right.plot(x_smooth, spl(x_smooth), color="#D32F2F", linestyle="--", linewidth=2, label="Mục tiêu hoạt động máy không người (Ngày)", zorder=5)
+            ax_right.scatter(xv, yv, color="#D32F2F", marker="o", s=40, zorder=6)
+        else:
+            ax_right.plot(x_d, mt_day, color="#D32F2F", linestyle="--", marker="o", linewidth=2, label="Mục tiêu hoạt động máy không người (Ngày)")
+
+        mt_day_plot = mt_day # fallback cho logic scale bên dưới
 
         # =========================
         # LABEL
@@ -2655,7 +2668,7 @@ def draw_timer_khong_nguoi_combo_chart(df_daily, df_month, title, output_file, s
 
 def process_timer_khong_nguoi_chart(prs):
     """
-    Xử lý dữ liệu và vẽ biểu đồ Timer Không Người vào Slide 19
+    Xử lý dữ liệu và vẽ biểu đồ Timer Không Người vào Slide 20
     Dữ liệu được lấy từ sheet 'KhongNguoi' của file Excel Timer Không Người.
     """
     try:
